@@ -11,6 +11,11 @@ def read_root():
 def read_item(item_id: int, q: str = None):
     return {"id": id, "q": q}
 
-    @app.get("/hello")
+@app.get("/hello")
 def hello():
     return { "msg": "Moro Ludde"}
+
+    
+@app.get("/api/ip")
+def ip():
+    return { "ip": "Hello ip"}
