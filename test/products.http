@@ -8,4 +8,20 @@ GET {{apiUrl}}/1002
 
 
 ### Create new product
-POST {{apiUrl}}/
+POST {{apiUrl}}
+Content-Type: application/json
+
+{
+"name": "Jeans",
+"price": 49.99
+}
+
+### Delete product
+DELETE  {{apiUrl}}/1004
+
+### Update product info
+PATCH  {{apiUrl}}/1004
+
+{
+    "price": 39.99
+}
