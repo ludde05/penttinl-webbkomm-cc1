@@ -14,25 +14,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+hot_rooms = [
+    {"roomNumber": 1, "type": "single", "price": 100},
+    {"roomNumber": 2, "type": "family", "price": 400},
+    {"roomNumber": 3, "type": "double", "price": 200},
+]
+
 @app.get("/")
 def read_root():
-    return { "msg": "Morjesta!", "v": "0.1" }
+    return { "msg": "Hotel booking", "v": "0.1" }
 
 
-@app.get("/items/{id}")
-def read_item(item_id: int, q: str = None):
-    return {"id": id, "q": q}
-
-@app.get("/hello")
-def hello():
-    return { "msg": "Moro Ludde"}
-
-    
-@app.get("/api/ip")
-def ip(request: Request):
-    return { "ip": request.client.host }
-
-
-@app.get("/ip", response_class=HTMLResponse)
-def ip(request: Request):
-    return f"<h1>Din ip är {request.client.host}</h1>"
+@app.get("/rooms")
+def rooms():
+    return {"msg": "Available rooms", "rooms": hot_rooms}

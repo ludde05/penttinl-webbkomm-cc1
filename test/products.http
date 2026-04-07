@@ -20,8 +20,18 @@ Content-Type: application/json
 DELETE  {{apiUrl}}/1004
 
 ### Update product info
+# PATCH kan uppdatera enskilda saker
 PATCH  {{apiUrl}}/1004
 
 {
     "price": 39.99
+}
+
+### Update product info (put)
+# PUT kan uppdatera hela objektet
+PUT  {{apiUrl}}/1004
+
+{
+    "name": "socks",
+    "price": 29.99
 }
